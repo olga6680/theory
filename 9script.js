@@ -67,19 +67,71 @@ if (4 == 4) {
 // (num === 50) ? console.log('ok') : console.log('error');
 
 // switch комбинация 
-const num = 51;
+// const num = 50;
 
-switch (num) {
-    case 49:
-        console.log('неверно');
-        break;
-    case 100:   
-        console.log('неверно');
-        break;
-    case 50:   
-        console.log('в точку');
-        break;
-    default: 
-        console.log('не в этот раз');
-        break;
+// switch (num) {
+//     case 49:
+//         console.log('неверно');
+//         break;
+//     case 100:
+//         console.log('неверно');
+//         break;
+//     case 50:
+//         console.log('в точку');
+//         break;
+//     default:
+//         console.log('не в этот раз');
+//         break;
+// }
+
+// Циклы
+
+// let num = 50;
+
+// while (num <= 55) { //Будет показывать пока выполняется условие
+//     console.log(num);
+//     num++;  //увеличивать на 1
+// }
+
+
+//*** */
+// do {
+//     console.log(num);
+//     num++;
+// }
+
+// while (num < 55);
+
+
+//*** */
+// for (let i = 1; i < 8; i++) { //начальное условие; конечное условие; в каких промежутках
+//     console.log(i);
+// }
+
+
+//****
+// let num = 50;
+
+// for (let i = 1; i < 8; i++) {
+//     console.log(num);
+//     num++;
+// }
+
+
+//*** */
+// for (let i = 1; i < 10; i++) {
+//     if (i === 6) {
+//         break;     //прервет цикл на этом условии
+//     }
+//     console.log(i);
+   
+// }
+
+//*** */
+for (let i = 1; i < 10; i++) {
+    if (i === 6) {
+        continue;     //пропускает этот шаг в цикле
+    }
+    console.log(i);
+   
 }
