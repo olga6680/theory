@@ -179,44 +179,105 @@
 // console.log(personalMovieDB);
 
 // ФУНКЦИИ
-let num = 20;
+// let num = 20;
 
-function showFirstMessage(text) {  // function declaration создается до начала выполнения кода
-    console.log(text);
-    let num = 10;
-    console.log(num);
-}
-
-showFirstMessage('Hello World!');
-console.log(num);
- 
-// function calc(a, b) {
-//     return (a + b);  // return - заканчивает функцию. Все, что дальше уже не сработает
+// function showFirstMessage(text) { // function declaration создается до начала выполнения кода
+//     console.log(text);
+//     let num = 10;
+//     console.log(num);
 // }
 
-// console.log(calc(4, 3));
-// console.log(calc(5, 6));
-// console.log(calc(10, 6));
+// showFirstMessage('Hello World!');
+// console.log(num);
 
-function ret() {
-    let num = 50;
-    return num;  // return возвращает результат работы функции. выводит наружу
-}
+// // function calc(a, b) {
+// //     return (a + b);  // return - заканчивает функцию. Все, что дальше уже не сработает
+// // }
 
-const anotherNum = ret(); 
-console.log(anotherNum);
+// // console.log(calc(4, 3));
+// // console.log(calc(5, 6));
+// // console.log(calc(10, 6));
 
-const logger = function() {  // function expression создается только после объявления
-    console.log('Hello!');
-};                              // после такой функции ставим ;
+// function ret() {
+//     let num = 50;
+//     return num; // return возвращает результат работы функции. выводит наружу
+// }
 
-logger();
+// const anotherNum = ret();
+// console.log(anotherNum);
 
-// Стрелочные функции
+// const logger = function() { // function expression создается только после объявления
+//     console.log('Hello!');
+// }; // после такой функции ставим ;
 
-// const calc = (a, b) =>  a + b ; //если стрелочная функция в одну строку, можно опускать фигурные скобки
+// logger();
 
-const calc = (a, b) => {
-    console.log('1');
-    return a + b;
-};
+// // Стрелочные функции
+
+// // const calc = (a, b) =>  a + b ; //если стрелочная функция в одну строку, можно опускать фигурные скобки
+
+// const calc = (a, b) => {
+//     console.log('1');
+//     return a + b;
+// };
+
+// МЕТОДЫ И СВОЙСТВА СТРОК
+// методы - это вспомогательные функции
+// свойства - вспомогательные значения
+
+// const str = "test";
+// // const arr = [1, 2, 4];
+
+// // console.log(str.length); // length - количество символов внутри строки. Это свойство
+// // console.log(arr.length); // length - количество символов внутри массива. Вызывается через .
+
+// // получить свойства и методы можно в браузере, введя в консоли console.dir(Number);
+
+// // console.log(str[2]); // 2 - индекс элемента в строке
+
+// // метод изменения регистра
+
+// // console.log(str[2] = 'd');  //так ничего не поменяет !!
+
+// // console.log(str[2].toUpperCase()); 
+// // console.log(str.toLowerCase()); 
+// // console.log(str);
+
+// const fruit = "Some fruit";
+
+// console.log(fruit.indexOf("fruit")); // этот метод находит с какого индекса начинается нужный кусочек
+// console.log(fruit.indexOf("q")); // получим -1  - значит нет такой буквы в строке
+
+
+// // метод slice()
+// const logg = "Hello World";
+
+// console.log(logg.slice(6, 11)); // обрезает часть строки. Первая цифра начало, вторая - конец
+
+// console.log(logg.slice(6)); // обрезает до конца
+
+// console.log(logg.slice(-5, -1)); // обрезает с нумерацией индекса с конца строки
+
+// // метод substring()
+// console.log(logg.substring(6, 11)); // такой же, как slice(), но не поддерживает отрицательные аргументы
+
+// //метод substr()
+// console.log(logg.substr(6, 5)); // вторая цифра - количество символов, которое нужно вырезать
+
+// //МЕТОДЫ И СВОЙСТВА ЧИСЕЛ
+
+// //Можно посмотреть в консоли браузера введя Math.
+
+// // Округление
+
+// const num = 12.2;
+
+// console.log(Math.round(num));
+
+// // Перевод строки в число
+
+// const test = "12.2px";
+
+// // console.log(parseInt(test)); // получим целое число 12
+
+// console.log(parseFloat(test)); // получим просто число 12.2
