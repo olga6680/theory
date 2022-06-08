@@ -367,38 +367,101 @@
 
 // CALLBACK FUNCTIONS
 
-function first() {
-    //Do something
-    setTimeout(function() {
-        console.log(1);
-    }, 500);
-}
+// function first() {
+//     //Do something
+//     setTimeout(function() {
+//         console.log(1);
+//     }, 500);
+// }
 
-function second() {
-    console.log(2);
-}
+// function second() {
+//     console.log(2);
+// }
 
-first();
-second();
+// first();
+// second();
 
-// Если функции идут в коде одна за другой, это не начит, что они выполняются также
+// // Если функции идут в коде одна за другой, это не начит, что они выполняются также
+
+// // function learnJS(lang, callback) {
+// //     console.log(`я учу: ${lang}`);
+// //     callback();
+// // }
+
+// // learnJS('JavaScript', function() {
+// //     console.log('Я прошел этот урок');
+// // });
 
 // function learnJS(lang, callback) {
 //     console.log(`я учу: ${lang}`);
 //     callback();
 // }
 
-// learnJS('JavaScript', function() {
+// function done() {
 //     console.log('Я прошел этот урок');
+// }
+
+// learnJS('JavaScript', done);
+
+// МАССИВЫ И ПСЕВДОМАССИВЫ
+
+// const arr = [1, 2, 3, 6, 8];
+// arr[99] = 0; // Задаем число 0 в массив с индексом 99
+// console.log(arr.length); // Вопрос на собеседовании:
+// // Как соотносится length с индексом элементов массива?
+// // Ответ: Последний индекс + 1
+// console.log(arr);
+
+
+// arr.pop(); // Удаляет последний элемент из массива
+// arr.push(10); // Добавляет элкмент в конец массива
+
+
+// console.log(arr);
+
+// Перебор массива
+
+// for (let i =0; i < arr.length; i++) {
+//     console.log(arr[i]);
+// }
+
+// Этот метод перебора ↓ используется, когда нужно прервать цикл, т.е. breack и continue
+
+// for (let value of arr) {
+//     console.log(value);
+// }
+
+// forEach() - самый часто используемый метод перебора
+
+// const arr = [1, 2, 3, 6, 8];
+
+// arr.forEach(function(item, i, arr) {  // item - условное обозначение элементов (назвать можно по-любому)
+//     // i - порядковый номер лементов
+//     console.log(`${i}: ${item} внутри массива ${arr}`);
+
 // });
 
-function learnJS(lang, callback) {
-    console.log(`я учу: ${lang}`);
-    callback();
+// split() представьте, что есть список огромный через запятую. Мы сделаем список по порядку
+
+// const str = prompt("", "");
+// const products = str.split(", ");
+// products.sort();
+// console.log(products);
+
+// // join() и наоборот из списка делаем список через запятую
+
+// console.log(products.join('; '));
+
+// sort() сортировка в алфавитном порядке. Всегда сортирует только, как строки
+
+const arr = [1, 13, 26, 6, 8];
+
+arr.sort(compareNum);
+
+console.log(arr);
+
+function compareNum(a, b) {
+    return a - b;
 }
 
-function done() {
-    console.log('Я прошел этот урок');
-}
-
-learnJS('JavaScript', done);
+// ↑ а вот так числа отсортируются по порядку
