@@ -381,16 +381,16 @@
 // first();
 // second();
 
-// // Если функции идут в коде одна за другой, это не начит, что они выполняются также
+// Если функции идут в коде одна за другой, это не начит, что они выполняются также
 
-// // function learnJS(lang, callback) {
-// //     console.log(`я учу: ${lang}`);
-// //     callback();
-// // }
+// function learnJS(lang, callback) {
+//     console.log(`я учу: ${lang}`);
+//     callback();
+// }
 
-// // learnJS('JavaScript', function() {
-// //     console.log('Я прошел этот урок');
-// // });
+// learnJS('JavaScript', function() {
+//     console.log('Я прошел этот урок');
+// });
 
 // function learnJS(lang, callback) {
 //     console.log(`я учу: ${lang}`);
@@ -403,65 +403,146 @@
 
 // learnJS('JavaScript', done);
 
-// МАССИВЫ И ПСЕВДОМАССИВЫ
+// ОБЪЕКТЫ
 
-// const arr = [1, 2, 3, 6, 8];
-// arr[99] = 0; // Задаем число 0 в массив с индексом 99
-// console.log(arr.length); // Вопрос на собеседовании:
-// // Как соотносится length с индексом элементов массива?
-// // Ответ: Последний индекс + 1
-// console.log(arr);
+// const options = {
+//     name: 'test',
+//     width: 1024,
+//     height: 1024,
+//     colors: {
+//         border: 'black',
+//         bg: 'red'
+//     }
+// };
+
+// // console.log(options.name);
+
+// // // удаляем какое-нибудь свойство
+
+// // delete options.name;
+
+// // console.log(options);
+
+// // перебор свойств
+
+// // for (let key in options) {
+// //     console.log(`Свойство ${key} имеет значение ${options[key]}`);
+// // }
+
+// //выдаст в консоли
+// // Свойство name имеет значение test
+// // Свойство width имеет значение 1024
+// // Свойство height имеет значение 1024
+// // Свойство colors имеет значение [object Object] - это объект внутри объекта
+// //чтобы его достать используется цикл в цикле
+
+// // for (let key in options) {
+// //     if (typeof(options[key]) === 'object') {
+// //         for (let i in options[key]) {
+// //             console.log(`Свойство ${i} имеет значение ${options[key][i]}`);
+// //             //например так проще понять
+// //             // console.log(options["colors"]["bg"])
+// //         }
+// //     } else {
+// //         console.log(`Свойство ${key} имеет значение ${options[key]}`);
+// //     }
+
+// // }
+
+// // //как подсчитать сколько свойств у объекта
+// // let counter = 0;
+// // for (let key in options) {
+// //     if (typeof(options[key]) === 'object') {
+// //         for (let i in options[key]) {
+// //             console.log(`Свойство ${i} имеет значение ${options[key][i]}`);
+// //             counter++;
+// //             //например так проще понять
+// //             // console.log(options["colors"]["bg"])
+// //         }
+// //     } else {
+// //         console.log(`Свойство ${key} имеет значение ${options[key]}`);
+// //         counter++;
+// //     }
+
+// // }
+
+// // console.log(counter);
 
 
-// arr.pop(); // Удаляет последний элемент из массива
-// arr.push(10); // Добавляет элкмент в конец массива
+// // более простой метод узнать количество свойств
 
 
-// console.log(arr);
+// //console.log(Object.keys(options)); // получаем массив со всеми ключами
 
-// Перебор массива
+// console.log(Object.keys(options).length); // получаем количество элементов в массиве
 
-// for (let i =0; i < arr.length; i++) {
-//     console.log(arr[i]);
-// }
+// такие методы мы можем создавать вручную
 
-// Этот метод перебора ↓ используется, когда нужно прервать цикл, т.е. breack и continue
+// const options = {
+//     name: 'test',
+//     width: 1024,
+//     height: 1024,
+//     colors: {
+//         border: 'black',
+//         bg: 'red'
+//     },
+//     makeTest: function() {
+//         console.log("Test");
+//     }
+// };
 
-// for (let value of arr) {
-//     console.log(value);
-// }
+// options.makeTest();
 
-// forEach() - самый часто используемый метод перебора
+// // деструктиризация объекта
 
-// const arr = [1, 2, 3, 6, 8];
+// // console.log(options["colors"]["bg"]) // Такая запись не очень верная и громозская
 
-// arr.forEach(function(item, i, arr) {  // item - условное обозначение элементов (назвать можно по-любому)
-//     // i - порядковый номер лементов
-//     console.log(`${i}: ${item} внутри массива ${arr}`);
+// //с помощью деструктуризации можно вытаскивать элементы объекта в качестве отдельных структур
 
-// });
+// const { border, bg } = options.colors;
 
-// split() представьте, что есть список огромный через запятую. Мы сделаем список по порядку
+// console.log(border);
 
-// const str = prompt("", "");
-// const products = str.split(", ");
-// products.sort();
-// console.log(products);
+console.log(NaN || 2 || undefined);
 
-// // join() и наоборот из списка делаем список через запятую
+console.log(NaN && 2 && undefined);
 
-// console.log(products.join('; '));
+console.log(1 && 2 && 3);
+console.log(!1 && 2 || !3);
 
-// sort() сортировка в алфавитном порядке. Всегда сортирует только, как строки
+console.log(25 || null && !3);
 
-const arr = [1, 13, 26, 6, 8];
+console.log(NaN || null || !3 || undefined || 5);
 
-arr.sort(compareNum);
+console.log(NaN || null && !3 && undefined || 5);
 
-console.log(arr);
+console.log(5 === 5 && 3 > 1 || 5);
 
-function compareNum(a, b) {
-    return a - b;
+
+const hamburger = 3;
+const fries = 3;
+const cola = 0;
+const nuggets = 2;
+
+if (hamburger === 3 && cola || fries === 3 && nuggets) {
+    console.log('Done!')
 }
 
-// ↑ а вот так числа отсортируются по порядку
+let hamburger;
+const fries = NaN;
+const cola = 0;
+const nuggets = 2;
+
+if (hamburger || cola || fries === 3 || nuggets) {
+    console.log('Done!')
+}
+
+
+let hamburger;
+const fries = NaN;
+const cola = 0;
+const nuggets = 2;
+
+if (hamburger && cola || fries === 3 && nuggets) {
+    console.log('Done!');
+}
