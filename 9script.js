@@ -302,13 +302,45 @@
 
 const usdCurr = 28;
 const eurCurr = 32;
+const discount = 0.9;
 
 function convert(amount, curr) {
-    console.log(curr * amount);
+    return curr * amount;
 }
+
+function promotion(result) {
+    console.log(result * discount);
+    // return function() {}
+}
+
+// promotion(convert(500, usdCurr));
+const res = convert(500, usdCurr);
+promotion(res);
 
 convert(500, usdCurr);
 convert(500, eurCurr);
+
+function test() {
+    for (let i = 0; i < 5; i++) {
+        console.log(i);
+        if (i === 3) return
+    }
+    console.log('Done');
+}
+
+test();
+
+// получится
+// 0
+// 1
+// 2
+// 3
+
+function doNothing() {};
+console.log(doNothing() === undefined);
+
+//любая функция, которая не содержит return будет выдавать undefined (пример с console.log)
+//после return нельзя ставить перенос строки. Дальше код не пойдет
 
 // МЕТОДЫ И СВОЙСТВА СТРОК
 // методы - это вспомогательные функции
