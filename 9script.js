@@ -300,44 +300,44 @@
 
 //аргументы функции
 
-const usdCurr = 28;
-const eurCurr = 32;
-const discount = 0.9;
+// const usdCurr = 28;
+// const eurCurr = 32;
+// const discount = 0.9;
 
-function convert(amount, curr) {
-    return curr * amount;
-}
+// function convert(amount, curr) {
+//     return curr * amount;
+// }
 
-function promotion(result) {
-    console.log(result * discount);
-    // return function() {}
-}
+// function promotion(result) {
+//     console.log(result * discount);
+//     // return function() {}
+// }
 
-// promotion(convert(500, usdCurr));
-const res = convert(500, usdCurr);
-promotion(res);
+// // promotion(convert(500, usdCurr));
+// const res = convert(500, usdCurr);
+// promotion(res);
 
-convert(500, usdCurr);
-convert(500, eurCurr);
+// convert(500, usdCurr);
+// convert(500, eurCurr);
 
-function test() {
-    for (let i = 0; i < 5; i++) {
-        console.log(i);
-        if (i === 3) return
-    }
-    console.log('Done');
-}
+// function test() {
+//     for (let i = 0; i < 5; i++) {
+//         console.log(i);
+//         if (i === 3) return
+//     }
+//     console.log('Done');
+// }
 
-test();
+// test();
 
-// получится
-// 0
-// 1
-// 2
-// 3
+// // получится
+// // 0
+// // 1
+// // 2
+// // 3
 
-function doNothing() {};
-console.log(doNothing() === undefined);
+// function doNothing() {};
+// console.log(doNothing() === undefined);
 
 //любая функция, которая не содержит return будет выдавать undefined (пример с console.log)
 //после return нельзя ставить перенос строки. Дальше код не пойдет
@@ -1093,3 +1093,90 @@ console.log(doNothing() === undefined);
 // const jonh = Object.create(soldier); // мы создаем Джона по прототипу солдата
 
 // jonh.sayHello();
+
+
+//Практика
+
+const personalMovieDB = {
+    count: 0,
+    movies: {
+
+    },
+    actors: {},
+    genres: [],
+    privat: false,
+    start: function() {
+        personalMovieDB.count = +prompt("Сколько фильмов вы уже посмотрели?", "");
+
+        while (personalMovieDB.count == '' || personalMovieDB.count == null || isNaN(personalMovieDB.count)) { // isNaN() проверка, что введено не число
+            personalMovieDB.count = +prompt("Сколько фильмов вы уже посмотрели?", "");
+        }
+    },
+    rememberMyFilms: function() {
+        for (let i = 0; i < 2; i++) {
+            const a = prompt('Один из последних просмотренных фильмов?', '').trim(),
+                b = prompt('На сколько оцените его?', '');
+
+            if (a != null && b != null && a != '' && b != '' && a.length < 50) {
+                personalMovieDB.movies[a] = b;
+                console.log('done');
+            } else {
+                console.log('error');
+
+                i--; //Если это условие не выполнилось, мы вернемся на одно повторение
+            }
+        }
+    },
+    detectPersonalLevel: function() {
+
+        if (personalMovieDB.count < 10) {
+            console.log('Просмотрено довольно мало фильмов');
+        } else if (personalMovieDB.count >= 10 && personalMovieDB.count < 30) {
+            console.log('Вы классический зритель');
+        } else if (personalMovieDB.count >= 30) {
+            console.log('Вы киноман');
+        } else {
+            console.log('Произошла ошибка');
+        }
+    },
+    showMyDB: function(hidden) {
+        if (!hidden) {
+            console.log(personalMovieDB);
+        }
+    },
+    toggleVisibleMyDB: function() {
+        if (personalMovieDB.privat) {
+            personalMovieDB.privat = false;
+        } else {
+            personalMovieDB.privat = true;
+        }
+    },
+    writeYourGenres: function() {
+        // for (let i = 1; i <= 3; i++) {
+        for (let i = 1; i < 2; i++) {
+            // let genre = prompt(`Ваш любимый жанр под номером ${i}`);
+
+            // if (genre === '' || genre == null) {
+            //     console.log('Вы ввели некорректные данные или не ввели их вовсе');
+            //     i--;
+            // } else {
+            //     personalMovieDB.genres[i - 1] = genre;
+            // }
+
+            let genres = prompt('Ведите ваши любимые жанры через запятую').toLowerCase();
+
+            if (genres === '' || genres == null) {
+                console.log('Вы ввели некорректные данные или не ввели их вовсе');
+                i--;
+            } else {
+                // personalMovieDB.genres[i - 1] = genre;
+                personalMovieDB.genres = genres.split(', ');
+                personalMovieDB.genres.sort();
+            }
+        }
+
+        personalMovieDB.genres.forEach((item, i) => {
+            console.log(`Любимый жанр ${i + 1} - это ${item}`);
+        });
+    }
+};
