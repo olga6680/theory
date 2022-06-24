@@ -970,27 +970,126 @@ console.log(doNothing() === undefined);
 //     'facebook'
 //   ]
 
-function log(a, b, c) {
-    console.log(a);
-    console.log(b);
-    console.log(c);
-}
+// function log(a, b, c) {
+//     console.log(a);
+//     console.log(b);
+//     console.log(c);
+// }
 
-const num = [2, 5, 7];
+// const num = [2, 5, 7];
 
-log(...num);
+// log(...num);
 
-// 2
-// 5
-// 7
+// // 2
+// // 5
+// // 7
 
-const array = ["a", "b"];
+// const array = ["a", "b"];
 
-const newArray = [...array];
+// const newArray = [...array];
 
-const q = {
-    one: 1,
-    two: 2
-};
+// const q = {
+//     one: 1,
+//     two: 2
+// };
 
-const newObj = {...q };
+// const newObj = {...q };
+
+
+// ООП
+
+// js при использовании каких-либо методов, переводит строку в обьект
+
+// let str = "some";
+// let strObj = new String(str);
+
+// // console.log(typeof(str));
+// // console.log(typeof(strObj));
+
+// // string
+// // object
+
+// console.dir([1, 2, 3]);
+
+// Array(3)
+// 0: 1
+// 1: 2
+// 2: 3
+// length: 3
+
+// const soldier = {  // общий прототип солдата
+//     health: 400,    // здоровье
+//     armor: 100      // броня
+// };
+
+// const jonh = {  // конкретный солдат Джон
+//     health: 100
+// };  
+
+//теперь нужно сделать, 
+// чтобы он обладал свойсвами прототипа солдата 
+// и модифицированными методаими (здоровье то слабое)
+
+// jonh.__proto__ = soldier;  //устаревшее свойство, сейчас редко используется
+
+// console.log(jonh);
+// console.log(jonh.armor); //взял свойство armor из прототипа солдата
+
+// { health: 100 }
+// 100
+
+// если мы, к примеру добавим прототипу какую-нибудь функцию, 
+// то она появится и у Джона
+
+// const soldier = {  // общий прототип солдата
+//     health: 400,    // здоровье
+//     armor: 100,      // броня
+//     sayHello: function() {
+//         console.log("Hello");
+//     }
+// };
+
+// const jonh = {  // конкретный солдат Джон
+//     health: 100
+// }; 
+
+// jonh.__proto__ = soldier;
+
+// jonh.sayHello();
+
+// __proto__ уже не нужно применять, вместо нее применяются такие команды
+
+// 1. Если объект Джон уже заранее был создан setPrototypeOf()
+
+// const soldier = {  // общий прототип солдата
+//     health: 400,    // здоровье
+//     armor: 100,      // броня
+//     sayHello: function() {
+//         console.log("Hello");
+//     }
+// };
+
+// const jonh = {  // конкретный солдат Джон
+//     health: 100
+// }; 
+
+// // jonh.__proto__ = soldier;
+
+// Object.setPrototypeOf(jonh, soldier); // это идентичная устаревшей команда
+
+// jonh.sayHello();
+
+
+// 2. Если мы еще не знаем, каким Джон будет Object.create()
+
+// const soldier = {  // общий прототип солдата
+//     health: 400,    // здоровье
+//     armor: 100,      // броня
+//     sayHello: function() {
+//         console.log("Hello");
+//     }
+// };
+
+// const jonh = Object.create(soldier); // мы создаем Джона по прототипу солдата
+
+// jonh.sayHello();
