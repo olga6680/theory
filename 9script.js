@@ -620,7 +620,7 @@ console.log(doNothing() === undefined);
 
 // //с помощью деструктуризации можно вытаскивать элементы объекта в качестве отдельных структур
 
-// const { border, bg } = options.colors;
+// const {border, bg} = options.colors;
 
 // console.log(border);
 
@@ -671,82 +671,174 @@ console.log(doNothing() === undefined);
 
 //Практика trim() method
 
-let numberOfFilms;
+// let numberOfFilms;
 
-function start() {
-    numberOfFilms = +prompt("Сколько фильмов вы уже посмотрели?", "");
+// function start() {
+//     numberOfFilms = +prompt("Сколько фильмов вы уже посмотрели?", "");
 
-    while (numberOfFilms == '' || numberOfFilms == null || isNaN(numberOfFilms)) { // isNaN() проверка, что введено не число
-        numberOfFilms = +prompt("Сколько фильмов вы уже посмотрели?", "");
-    }
+//     while (numberOfFilms == '' || numberOfFilms == null || isNaN(numberOfFilms)) { // isNaN() проверка, что введено не число
+//         numberOfFilms = +prompt("Сколько фильмов вы уже посмотрели?", "");
+//     }
+// }
+
+// start();
+
+// const personalMovieDB = {
+//     count: numberOfFilms,
+//     movies: {
+
+//     },
+//     actors: {},
+//     genres: [],
+//     privat: false
+// };
+
+
+
+
+// function rememberMyFilms() {
+//     for (let i = 0; i < 2; i++) {
+//         const a = prompt('Один из последних просмотренных фильмов?', '').trim(),
+//             b = prompt('На сколько оцените его?', '');
+
+//         if (a != null && b != null && a != '' && b != '' && a.length < 50) {
+//             personalMovieDB.movies[a] = b;
+//             console.log('done');
+//         } else {
+//             console.log('error');
+
+//             i--; //Если это условие не выполнилось, мы вернемся на одно повторение
+//         }
+//     }
+// }
+
+// // rememberMyFilms();
+
+
+// function detectPersonalLevel() {
+
+//     if (personalMovieDB.count < 10) {
+//         console.log('Просмотрено довольно мало фильмов');
+//     } else if (personalMovieDB.count >= 10 && personalMovieDB.count < 30) {
+//         console.log('Вы классический зритель');
+//     } else if (personalMovieDB.count >= 30) {
+//         console.log('Вы киноман');
+//     } else {
+//         console.log('Произошла ошибка');
+//     }
+// }
+
+// // detectPersonalLevel();
+
+
+
+
+// function showMyDB(hidden) {
+//     if (!hidden) {
+//         console.log(personalMovieDB);
+//     }
+// }
+
+// showMyDB(personalMovieDB.privat);
+
+// function writeYourGenres() {
+//     for (let i = 1; i <= 3; i++) {
+//         // const genre = prompt(`Ваш любимый жанр под номером ${i}`);
+//         // personalMovieDB.genres[i - 1] = genre;
+//         personalMovieDB.genres[i - 1] = prompt(`Ваш любимый жанр под номером ${i}`);
+//     }
+// }
+
+// writeYourGenres();
+
+// МАССИВЫ И ПСЕВДОМАССИВЫ
+
+// const arr = [1, 2, 3, 6, 10];
+
+// arr.pop(); // удаляет последний элемент массива
+// arr.push(11); // добавляет элемент в конец массива
+
+// для работы с началом массива очень редко применяются методы shift(), unshift()
+// потому, что изменяется нумерация всех элементов массива
+// console.log(arr);
+
+// for (let i = 0; i < arr.length; i++) { // перебор элементов с помощью цикла 
+//     console.log(arr[i]); //arr.length - пока не закончатся все элементы
+// }
+
+// for (let value of arr) { // идентично предыдущему. 
+//     console.log(value);  //value - произвольное условное название всех элементов
+// }
+
+// console.log(arr.length); //получим длинну массива 5
+
+// arr[99] = 0; // на 99 позицию добавляем в массив 0
+
+// console.log(arr.length);// теперь получим 100
+
+// console.log(arr); // [ 1, 2, 3, 6, 10, <94 empty items>, 0 ] т.е. 94 пустых ячейки
+
+
+// метод forEach
+
+// const arr = [1, 2, 3, 6, 10];
+
+// arr.forEach(function(item, i, arr) {
+//     console.log(`${i}: ${item} внутри массива ${arr}`);
+// });
+
+// 0: 1 внутри массива 1,2,3,6,10
+// 1: 2 внутри массива 1,2,3,6,10
+// 2: 3 внутри массива 1,2,3,6,10
+// 3: 6 внутри массива 1,2,3,6,10
+// 4: 10 внутри массива 1,2,3,6,10
+
+
+// метод split() - преображает строку в массив
+
+// const str = prompt("", "");
+// const product = str.split(", "); //здесь надо указать, через какой разделитель будут элементы в массиве
+// console.log(product);
+
+// (6) ['`22`at', 'xhfd', 'b', 'agre', 'sgseh ', 'sdbhsh']
+// 0: "`22`at"
+// 1: "xhfd"
+// 2: "b"
+// 3: "agre"
+// 4: "sgseh "
+// 5: "sdbhsh"
+// length: 6
+
+
+//метод join() -наоборот преображает массив в строку
+
+// console.log(product.join('; ')); //здесь тоже необходимо указать разделитель
+
+// wrer; sgtg; gyfj; thaiuth; hshsh
+
+
+//метод sort() - сортирует в алфавитном порядке либо по-порядку, первых цифр в числе
+
+// const str = prompt("", "");
+// const product = str.split(", ");
+// product.sort();
+
+// console.log(product.join('; ')); 
+
+// dhdrh; eryry; twer; twta; yeye
+
+// const arr = [1, 12, 13, 6, 10];
+// arr.sort();
+// console.log(arr);
+
+// [ 1, 10, 12, 13, 6 ]
+
+const arr = [1, 12, 13, 6, 10];
+arr.sort(compareNum);
+console.log(arr);
+
+function compareNum(a, b) { // функция для правильной сортировки чисел
+    return a - b;
 }
 
-start();
-
-const personalMovieDB = {
-    count: numberOfFilms,
-    movies: {
-
-    },
-    actors: {},
-    genres: [],
-    privat: false
-};
-
-
-
-
-function rememberMyFilms() {
-    for (let i = 0; i < 2; i++) {
-        const a = prompt('Один из последних просмотренных фильмов?', '').trim(),
-            b = prompt('На сколько оцените его?', '');
-
-        if (a != null && b != null && a != '' && b != '' && a.length < 50) {
-            personalMovieDB.movies[a] = b;
-            console.log('done');
-        } else {
-            console.log('error');
-
-            i--; //Если это условие не выполнилось, мы вернемся на одно повторение
-        }
-    }
-}
-
-// rememberMyFilms();
-
-
-function detectPersonalLevel() {
-
-    if (personalMovieDB.count < 10) {
-        console.log('Просмотрено довольно мало фильмов');
-    } else if (personalMovieDB.count >= 10 && personalMovieDB.count < 30) {
-        console.log('Вы классический зритель');
-    } else if (personalMovieDB.count >= 30) {
-        console.log('Вы киноман');
-    } else {
-        console.log('Произошла ошибка');
-    }
-}
-
-// detectPersonalLevel();
-
-
-
-
-function showMyDB(hidden) {
-    if (!hidden) {
-        console.log(personalMovieDB);
-    }
-}
-
-showMyDB(personalMovieDB.privat);
-
-function writeYourGenres() {
-    for (let i = 1; i <= 3; i++) {
-        // const genre = prompt(`Ваш любимый жанр под номером ${i}`);
-        // personalMovieDB.genres[i - 1] = genre;
-        personalMovieDB.genres[i - 1] = prompt(`Ваш любимый жанр под номером ${i}`);
-    }
-}
-
-writeYourGenres();
+//  [1, 6, 10, 12, 13]

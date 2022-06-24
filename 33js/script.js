@@ -16,14 +16,5 @@ console.log(block);
 
 // console.log(1 + 2);
 
-const userData = {
-    name: 'Ivan',
-    age: null
-}
-
-// if (userData && userData.skills && userData.skills.js) { //чтобы избавиться от таких больших проверок
-//     console.log(userData.skills.js); //был создан оператор опционной цепочки
-// }
-
-console.log(userData.skills ? .js); //оператор проверит код слева от себя..если не существует,
+// 0.0//оператор проверит код слева от себя..если не существует,
 // пойдет дальше
