@@ -9,7 +9,7 @@ const circles = document.getElementsByClassName('circle');
 // console.log(circles); // все равно получаем HTMLCollection
 const wrapper = document.querySelector('.wrapper');
 // const hearts = document.querySelectorAll('.heart');
-const hearts = weapper.querySelectorAll('.heart');
+const hearts = wrapper.querySelectorAll('.heart');
 // console.log(hearts);
 //NodeList(3) [div.heart, div.heart, div.heart]
 //здесь уже появляется метод forEaсh
