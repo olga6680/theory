@@ -1273,22 +1273,69 @@
 
 // 4
 
-function createCounter() {  // это function declaration выполняется 
-                          //еще до объявления переменных
-    let counter = 0;
+// function createCounter() {  // это function declaration выполняется 
+//                           //еще до объявления переменных
+//     let counter = 0;
 
-    const myFunction = function() {
-        counter = counter + 1;
-        return counter;
-    }
+//     const myFunction = function() {
+//         counter = counter + 1;
+//         return counter;
+//     }
 
-    return myFunction;
-}
+//     return myFunction;
+// }
 
-const increment = createCounter();
-const c1 = increment();
-const c2 = increment();
-const c3 = increment();
+// const increment = createCounter();
+// const c1 = increment();
+// const c2 = increment();
+// const c3 = increment();
 
-console.log(c1, c2, c3);
+// console.log(c1, c2, c3);
 
+// //задачи
+//1 
+// let x = 5; alert( x++ );  
+// 5 - потому что постфиксная форма сначала возвращает начальное значение
+// Если будет ++х, то выдаст 6
+
+//2 
+//[ ] + false - null + true  //  NaN
+// console.log(typeof([] + false)); // "false"
+// console.log(typeof([] + false - null)); // NaN - значение при выполнении вычитания с не математическим значением
+// console.log(typeof([] + false - null + true)); // NaN - значение при выполнении вычитания с не математическим значением
+
+//3
+// let y = 1;
+// let x = y = 2;
+// alert(x);
+// 2
+
+//4
+// [] + 1 + 2; // "12"
+
+//5
+// alert( "1"[0] ) // 1
+
+//6
+// 2 && 1 && null && 0 && undefined // null
+// И запинается на лжи
+// ИЛИ запинается на правде
+
+//7 
+// !!( a && b ) и (a && b) // !! - превращают выражение в булиновое. они не равны
+
+//8
+//                   3
+// alert( null || 2 && 3 || 4 );  // 3
+
+//9 
+// a = [1, 2, 3]; b = [1, 2, 3]; Правда ли что a == b // no
+
+//10
+// alert( +"Infinity" ); // Infinity
+
+//11 
+// Верно ли сравнение: "Ёжик" > "яблоко" // no
+
+//12 
+// 0 || "" || 2 || undefined || true || falsе // 2
