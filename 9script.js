@@ -1097,86 +1097,158 @@
 
 //Практика
 
-const personalMovieDB = {
-    count: 0,
-    movies: {
+// const personalMovieDB = {
+//     count: 0,
+//     movies: {
 
-    },
-    actors: {},
-    genres: [],
-    privat: false,
-    start: function() {
-        personalMovieDB.count = +prompt("Сколько фильмов вы уже посмотрели?", "");
+//     },
+//     actors: {},
+//     genres: [],
+//     privat: false,
+//     start: function() {
+//         personalMovieDB.count = +prompt("Сколько фильмов вы уже посмотрели?", "");
 
-        while (personalMovieDB.count == '' || personalMovieDB.count == null || isNaN(personalMovieDB.count)) { // isNaN() проверка, что введено не число
-            personalMovieDB.count = +prompt("Сколько фильмов вы уже посмотрели?", "");
-        }
-    },
-    rememberMyFilms: function() {
-        for (let i = 0; i < 2; i++) {
-            const a = prompt('Один из последних просмотренных фильмов?', '').trim(),
-                b = prompt('На сколько оцените его?', '');
+//         while (personalMovieDB.count == '' || personalMovieDB.count == null || isNaN(personalMovieDB.count)) { // isNaN() проверка, что введено не число
+//             personalMovieDB.count = +prompt("Сколько фильмов вы уже посмотрели?", "");
+//         }
+//     },
+//     rememberMyFilms: function() {
+//         for (let i = 0; i < 2; i++) {
+//             const a = prompt('Один из последних просмотренных фильмов?', '').trim(),
+//                 b = prompt('На сколько оцените его?', '');
 
-            if (a != null && b != null && a != '' && b != '' && a.length < 50) {
-                personalMovieDB.movies[a] = b;
-                console.log('done');
-            } else {
-                console.log('error');
+//             if (a != null && b != null && a != '' && b != '' && a.length < 50) {
+//                 personalMovieDB.movies[a] = b;
+//                 console.log('done');
+//             } else {
+//                 console.log('error');
 
-                i--; //Если это условие не выполнилось, мы вернемся на одно повторение
-            }
-        }
-    },
-    detectPersonalLevel: function() {
+//                 i--; //Если это условие не выполнилось, мы вернемся на одно повторение
+//             }
+//         }
+//     },
+//     detectPersonalLevel: function() {
 
-        if (personalMovieDB.count < 10) {
-            console.log('Просмотрено довольно мало фильмов');
-        } else if (personalMovieDB.count >= 10 && personalMovieDB.count < 30) {
-            console.log('Вы классический зритель');
-        } else if (personalMovieDB.count >= 30) {
-            console.log('Вы киноман');
-        } else {
-            console.log('Произошла ошибка');
-        }
-    },
-    showMyDB: function(hidden) {
-        if (!hidden) {
-            console.log(personalMovieDB);
-        }
-    },
-    toggleVisibleMyDB: function() {
-        if (personalMovieDB.privat) {
-            personalMovieDB.privat = false;
-        } else {
-            personalMovieDB.privat = true;
-        }
-    },
-    writeYourGenres: function() {
-        // for (let i = 1; i <= 3; i++) {
-        for (let i = 1; i < 2; i++) {
-            // let genre = prompt(`Ваш любимый жанр под номером ${i}`);
+//         if (personalMovieDB.count < 10) {
+//             console.log('Просмотрено довольно мало фильмов');
+//         } else if (personalMovieDB.count >= 10 && personalMovieDB.count < 30) {
+//             console.log('Вы классический зритель');
+//         } else if (personalMovieDB.count >= 30) {
+//             console.log('Вы киноман');
+//         } else {
+//             console.log('Произошла ошибка');
+//         }
+//     },
+//     showMyDB: function(hidden) {
+//         if (!hidden) {
+//             console.log(personalMovieDB);
+//         }
+//     },
+//     toggleVisibleMyDB: function() {
+//         if (personalMovieDB.privat) {
+//             personalMovieDB.privat = false;
+//         } else {
+//             personalMovieDB.privat = true;
+//         }
+//     },
+//     writeYourGenres: function() {
+//         // for (let i = 1; i <= 3; i++) {
+//         for (let i = 1; i < 2; i++) {
+//             // let genre = prompt(`Ваш любимый жанр под номером ${i}`);
 
-            // if (genre === '' || genre == null) {
-            //     console.log('Вы ввели некорректные данные или не ввели их вовсе');
-            //     i--;
-            // } else {
-            //     personalMovieDB.genres[i - 1] = genre;
-            // }
+//             // if (genre === '' || genre == null) {
+//             //     console.log('Вы ввели некорректные данные или не ввели их вовсе');
+//             //     i--;
+//             // } else {
+//             //     personalMovieDB.genres[i - 1] = genre;
+//             // }
 
-            let genres = prompt('Ведите ваши любимые жанры через запятую').toLowerCase();
+//             let genres = prompt('Ведите ваши любимые жанры через запятую').toLowerCase();
 
-            if (genres === '' || genres == null) {
-                console.log('Вы ввели некорректные данные или не ввели их вовсе');
-                i--;
-            } else {
-                // personalMovieDB.genres[i - 1] = genre;
-                personalMovieDB.genres = genres.split(', ');
-                personalMovieDB.genres.sort();
-            }
-        }
+//             if (genres === '' || genres == null) {
+//                 console.log('Вы ввели некорректные данные или не ввели их вовсе');
+//                 i--;
+//             } else {
+//                 // personalMovieDB.genres[i - 1] = genre;
+//                 personalMovieDB.genres = genres.split(', ');
+//                 personalMovieDB.genres.sort();
+//             }
+//         }
 
-        personalMovieDB.genres.forEach((item, i) => {
-            console.log(`Любимый жанр ${i + 1} - это ${item}`);
-        });
-    }
-};
+//         personalMovieDB.genres.forEach((item, i) => {
+//             console.log(`Любимый жанр ${i + 1} - это ${item}`);
+//         });
+//     }
+// };
+
+//ДИНАМИЧЕСКАЯ ТИПИЗАЦИЯ
+
+//to string
+
+// 1. 
+// console.log(typeof(String(null))); //устаревшая конструкция
+// console.log(typeof(String(4))); //устаревшая конструкция
+// string
+
+//2. Конкотинация - что-то складываем со строкой
+// console.log(typeof('5' + ''));
+// //string
+
+// const num = 5; 
+
+// console.log("https://facebook/catalog/" + num); //устаревший способ. сейчас 
+// //лучше использовать интерпаляцию с бектиками. Просто как пример
+
+// //https://facebook/catalog/5
+
+// const fontsize = 26 + 'px';
+
+
+//to number
+
+//1.
+
+// console.log(typeof(Number('5'))); // устаревшая команда
+
+// //2. Унарный плюс
+
+// console.log(typeof(+'5')); 
+
+// //3. parseInt
+// console.log(typeof(parseInt("15px", 10))); // 10 - десятичная система
+
+//number
+
+// let answ = +prompt("Hello", ""); // переведет строки от пользователя в числа
+
+//потому, что абсолютно все данные, полученные от пользователя, будут строками
+
+
+// to boolean 
+
+// 0, '', null, undefined, NaN - false
+
+//1.
+
+// let switcher = null;
+
+// if (switcher) {
+//     console.log('Working...');
+// }
+// // не работет
+// switcher = 1;
+
+// if (switcher) {
+//     console.log('Working...');
+// }
+
+// //работает
+
+// //2.
+
+// console.log(typeof(Boolean('5'))); //редко пользуются
+
+// //3.
+
+// console.log(typeof(!!"4444")); //
+// boolean
