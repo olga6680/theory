@@ -27,8 +27,8 @@
 
 for (let node of document.body.childNodes) {
     if (node.nodeName == '#text') { // если попадется текстовая нода, 
-                           //    ничего с ней не делать
-        continue;         //    так останутся одни элементы
+        //    ничего с ней не делать
+        continue; //    так останутся одни элементы
     }
 
     console.log(node);

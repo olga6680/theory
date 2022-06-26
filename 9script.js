@@ -1442,7 +1442,7 @@ function getTotalProgressByIteration(data) {
 //рекурсия
 
 function getTotalProgressByRecursion(data) {
-    if (Array.isArray(data)) {         
+    if (Array.isArray(data)) {
         let total = 0;
 
 
@@ -1461,10 +1461,9 @@ function getTotalProgressByRecursion(data) {
         }
 
         return total;
-    }   
+    }
 }
 
 const result = getTotalProgressByRecursion(students);
 
 console.log(result[0] / result[1]);
-
