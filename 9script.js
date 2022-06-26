@@ -1371,99 +1371,119 @@
 
 ///
 
-let students = {
-    js: [{
-        name: 'Jonh',
-        progress: 100
-    }, {
-        name: 'Ivan',
-        progress: 60
-    }],
+// let students = {
+//     js: [{
+//         name: 'Jonh',
+//         progress: 100
+//     }, {
+//         name: 'Ivan',
+//         progress: 60
+//     }],
 
-    html: {
-        basic: [{
-            name: 'Peter',
-            progress: 20
-        }, {
-            name: 'Ann',
-            progress: 18
-        }],
+//     html: {
+//         basic: [{
+//             name: 'Peter',
+//             progress: 20
+//         }, {
+//             name: 'Ann',
+//             progress: 18
+//         }],
 
-        pro: [{
-            name: 'Sam',
-            progress: 10
-        }],
+//         pro: [{
+//             name: 'Sam',
+//             progress: 10
+//         }],
 
-        semi: {
-            students: [{
-                name: 'Test',
-                progress: 100
-            }]
-        }
-    }
-};
+//         semi: {
+//             students: [{
+//                 name: 'Test',
+//                 progress: 100
+//             }]
+//         }
+//     }
+// };
 
-// нужно вывести средний progress. Выведем 2-ми способами: 
-// с помощью цикла и рекруссии
+// // нужно вывести средний progress. Выведем 2-ми способами: 
+// // с помощью цикла и рекруссии
 
-function getTotalProgressByIteration(data) {
-    let total = 0;
-    let students = 0;
+// function getTotalProgressByIteration(data) {
+//     let total = 0;
+//     let students = 0;
 
-    for (let course of Object.values(data)) {
-        // Object.values() - метод создает объект
-        // со значениями свойств из всех данных объектов или массивов
-        if (Array.isArray(course)) {
-            //Array.isArray(course) - метод определяет массив ли перед нами           
-            students += course.length; // считаем сколько всего студентов
+//     for (let course of Object.values(data)) {
+//         // Object.values() - метод создает объект
+//         // со значениями свойств из всех данных объектов или массивов
+//         if (Array.isArray(course)) {
+//             //Array.isArray(course) - метод определяет массив ли перед нами           
+//             students += course.length; // считаем сколько всего студентов
 
-            for (let i = 0; i < course.length; i++) {
-                total += course[i].progress; // вытаскиваем и суммируем прогресс
-            }
-        } else { // если же у нас объект
-            for (let subCourse of Object.values(course)) {
-                students += subCourse.length;
+//             for (let i = 0; i < course.length; i++) {
+//                 total += course[i].progress; // вытаскиваем и суммируем прогресс
+//             }
+//         } else { // если же у нас объект
+//             for (let subCourse of Object.values(course)) {
+//                 students += subCourse.length;
 
-                for (let i = 0; i < subCourse.length; i++) {
-                    total += subCourse[i].progress; // вытаскиваем и суммируем прогресс
-                }
-            }
-        }
-    }
-
-
-    return total / students;
-}
+//                 for (let i = 0; i < subCourse.length; i++) {
+//                     total += subCourse[i].progress; // вытаскиваем и суммируем прогресс
+//                 }
+//             }
+//         }
+//     }
 
 
-// console.log(getTotalProgressByIteration(students));
+//     return total / students;
+// }
 
 
-//рекурсия
-
-function getTotalProgressByRecursion(data) {
-    if (Array.isArray(data)) {
-        let total = 0;
+// // console.log(getTotalProgressByIteration(students));
 
 
-        for (let i = 0; i < data.length; i++) {
-            total += data[i].progress;
-        }
+// //рекурсия
 
-        return [total, data.length];
-    } else {
-        let total = [0, 0];
+// function getTotalProgressByRecursion(data) {
+//     if (Array.isArray(data)) {
+//         let total = 0;
 
-        for (let subData of Object.values(data)) {
-            const subDataArr = getTotalProgressByRecursion(subData);
-            total[0] += subDataArr[0];
-            total[1] += subDataArr[1];
-        }
 
-        return total;
-    }
-}
+//         for (let i = 0; i < data.length; i++) {
+//             total += data[i].progress;
+//         }
 
-const result = getTotalProgressByRecursion(students);
+//         return [total, data.length];
+//     } else {
+//         let total = [0, 0];
 
-console.log(result[0] / result[1]);
+//         for (let subData of Object.values(data)) {
+//             const subDataArr = getTotalProgressByRecursion(subData);
+//             total[0] += subDataArr[0];
+//             total[1] += subDataArr[1];
+//         }
+
+//         return total;
+//     }
+// }
+
+// const result = getTotalProgressByRecursion(students);
+
+// console.log(result[0] / result[1]);
+
+// //СОБЫТИЯ НА МОБИЛЬНЫХ УСТРОЙСТВАХ
+
+// // touchstart срабатывает при касании к элементу
+
+// // touchmove срабатывает при движении пальца по элементу
+
+// // tiuchend срабатывает, когда палец отрывается от элемента
+
+// // touchenter срабатывает, когда палец заходит за пределы элемента
+
+// // touchleavt срабатывает, когда палец ушел за пределы элемента не отрываясь от экрана
+
+// // touchcansel когда при серфинге, например палец выходит за пределы браузера
+
+// window.addEventListener('DOMContentLoaded', => {
+
+// });
+
+
