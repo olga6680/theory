@@ -1486,4 +1486,56 @@
 
 // });
 
+/////
+
+// defer - тег
+
+//загружает скрипт в фоповом режиме, т.е. начинает загрузку 
+//еще до загрузки html  кода
+
+/* <script defer src="js/script.js"</script> */
+
+// скрипты с defer никогда не блокируют страницу, можно размещать вначале кода
+// выполняются же они, когда DOM дерево уже готово, хотя загружаются раньше
+// скрипты с defer загружаются последовательно, по очереди, не зависимо от величины
+
+// такие скрипты нужно размещать в body вначале, не в header - гугл ругается
+
+
+// async 
+
+// скрипты становятся независимыми и 
+// не ждут ни загрузки других скриптов, ни страницы
+
+/* <script async src="js/script.js"</script> */
+
+// так подключают различные метрики и счетчики, отслеживающие
+// вход пользователя на сайт
+
+
+// можно также помещать скрипты на сайт с помощью js
+
+// const script = document.createElement('script');
+// script.src = "js/test/js";
+// document.body.append(script);
+
+// динамически загружаемые скрипты ведут себя по умолчанию, как async
+// поэтому можно поменять порядок загрузки скриптов
+
+// const script = document.createElement('script');
+// script.src = "js/test/js";
+// script.async = false;
+// document.body.append(script);
+
+// function loadScript(src) {
+//     const script = document.createElement('script');
+//     script.src = src;
+//     script.async = false;
+//     document.body.append(script);
+// }
+
+// loadScript('js/test.js');
+// loadScript('js/some.js');
+
+// теперь они будут погружаться строго друг за другом
 
