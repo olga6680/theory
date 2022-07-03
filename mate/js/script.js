@@ -188,3 +188,27 @@
 
 
 ///////////////////////
+
+// Наклейки готовы? Хорошо, нужно увеличивать производительность наших линий в два раза! Раньше мы там только попкорн готовили.
+
+// Напиши функцию doublePower, которая принимает массив мощностей currentPowers и возвращает новый массив удвоенных мощностей.
+
+// function doublePower(currentPowers) {
+//     // write code here
+//     let value = [];
+
+//     for (let i = 0; i < currentPowers.length; i++) {
+
+//         value.push(currentPowers[i] *= 2);
+//     }
+
+//     console.log(value);
+//     return value;
+// }
+
+// doublePower([100, 150, 200, 220]) === [200, 300, 400, 440]
+// doublePower([45, 34, 56, 67]) === [90, 68, 112, 134]
+// doublePower([]) === []
+
+
+//////////////////////////////
