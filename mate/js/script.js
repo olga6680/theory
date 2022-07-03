@@ -327,3 +327,40 @@
 
 
 ////////////////////////
+
+// Роботы протестированы. Медленные роботы отправлены на апгрейд. Mate Post хочет купить у нас десяток роботов для доставки грузов по городу. Для этого им нужны роботы, которые будут переносить за день больше всего груза.
+
+// Давай напишем функцию compareRobots, которая получает два массива. Первый массив firstRobotResults - это веса грузов, перевезённых за день первым роботом, второй secondRobotResults - соответственно вторым.
+
+// Проверь, кто из роботов перевёз больший вес, и верни строку с рекомендацией, кого из роботов стоит купить (см. примеры).
+
+// function compareRobots(firstRobotResults, secondRobotResults) {
+//     let sumFirstRobot = 0;
+//     let sumSecondRobot = 0;
+  
+//     for (let i = 0; i < firstRobotResults.length; i++) {
+//       sumFirstRobot += firstRobotResults[i];
+//     }
+  
+//     for (let j = 0; j < secondRobotResults.length; j++) {
+//       sumSecondRobot += secondRobotResults[j];
+//     }
+  
+//     if (sumFirstRobot > sumSecondRobot) {
+//       return `First robot for sale!`;
+//     } else if (sumFirstRobot < sumSecondRobot) {
+//       return `Second robot for sale!`;
+//     } else {
+//       return `Both robots for sale!`;
+//     }   
+//   }
+
+//   compareRobots([12, 4, 13], [1, 1, 4, 5, 12]) === 'First robot for sale!' // 29 > 23
+//   compareRobots([9, 7, 9], [1, 3, 4, 5, 12]) === 'Both robots for sale!' // 25 = 25
+//   compareRobots([1, 3, 4], [1, 1, 4, 5]) === 'Second robot for sale!' // 8 < 11
+
+
+
+//////////////
+
+
