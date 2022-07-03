@@ -448,17 +448,17 @@
 
 // function splitString(str) {
 //     const symb = [];
-  
+
 //     if (str.length % 2 !== 0) {
 //       str += '_';
 //     }
-  
+
 //     const n = str.split('');
-  
+
 //     for (let i = 0; i < n.length; i = i + 2) {
 //       symb.push(n[i] + n[i + 1]);
 //     }
-  
+
 //     return symb;
 //   }
 
@@ -467,3 +467,34 @@
 
 
 //////////////////////
+
+
+// Создай функцию scrollingText, которая
+
+// принимает строку word;
+// последовательно переставляет все символы в строке с нулевого индекса на последний;
+// возвращает массив с полученными комбинациями этой строки в верхнем регистре.
+
+// function scrollingText(word) {
+//     let arr = [];
+//     let upWord = word.toUpperCase();
+
+//     for (let i = 0; i < upWord.length; i++) {
+//         arr.push(upWord.slice(i) + upWord.slice(0, i));
+//     }
+
+//     return arr;
+// }
+
+// scrollingText('robot')
+
+// Возвращает:
+// [ 'ROBOT',
+//   'OBOTR',
+//   'BOTRO',
+//   'OTROB',
+//   'TROBO' ]
+
+
+//////////////////////
+
