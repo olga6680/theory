@@ -3,11 +3,11 @@
 
 // const countMs = (text) => {
 //     let count = 0;
-  
+
 //     for (const letter of text) {
 //       if (letter.toLowerCase() === 'm') ++count;
 //     }
-  
+
 //     return count;
 //   }
 
@@ -28,10 +28,10 @@
 //       let al = [ 'a', 'e', 'i', 'o', 'u', 'y',
 //                  'A', 'E', 'I', 'O', 'U', 'Y' ];
 //       let result = "";
-       
+
 //       for(let i = 0; i < doc.length; i++)
 //       {
-           
+
 //           if (!al.includes(doc[i]))
 //           {
 //               result += doc[i];
@@ -57,7 +57,7 @@
 //       .split(' ')
 //       .reduce((prevVal, curWord) => prevVal + (curWord ? curWord[0]: ''), '')
 //       .toUpperCase()
-  
+
 //   } 
 
 // makeAbbr('national aeronautics space administration') === 'NASA'
@@ -99,3 +99,40 @@
 ///////
 
 
+// Мы усовершенствовали нашу программу для сбора статистики по вебинарам Миши. Теперь после сбора статистики, она отправляет данные на сервер в виде строки 111001010111011, где 1 - это студент, который понял тему, а 0 - соответственно, нет.
+
+// Было бы полезно понимать сколько процентов группы усвоили материал, это покажет насколько вебинар был эффективен.
+
+// Создай функцию getSuccessRate которая будет принимать, строку statistic, и возвращать процент студентов, которые поняли материал, округляя до ближайшего целого (используй Math.round(result) для округления).
+
+// function getSuccessRate(statistic) {
+//     let result = 0;
+//     let sumStudents = 0;
+//     let percent = 0;
+
+//     if (statistic.length !== 0) {
+//       sumStudents = statistic.length;
+//     } else {
+//       sumStudents = 1;
+//     }
+
+//     for (let i = 0; i < statistic.length; i++) {
+//         if (statistic[i] === '1') {
+//             result++;
+//         }
+
+//     }
+
+//     percent = Math.round(100 * result / sumStudents);
+
+//     return percent;
+// }
+
+// getSuccessRate('11100') === 60
+// getSuccessRate('1100') === 50
+// getSuccessRate('000000') === 0
+// getSuccessRate('11111') === 100
+// getSuccessRate('') === 0
+
+
+///////
