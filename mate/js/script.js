@@ -68,3 +68,21 @@
 /////////
 
 
+// Создай функцию decryptMessage, которая принимает строку message и возвращает строку, где символы из message расположены в обратном порядке.
+
+// function decryptMessage(message) {
+//     let result = "";
+//     // write code here
+//     for (let i = message.length - 1; i >= 0; i--) {
+//       result += message[i];
+//     }
+//     return result;
+//   }
+
+// decryptMessage('!!!reeb gniknird ekil eW') === 'We like drinking beer!!!'
+// decryptMessage('0202 ni eb lliw cimednap surivanoroc A') === 'A coronavirus pandemic will be in 2020'
+
+
+/////////
+
+
