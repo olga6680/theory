@@ -16,3 +16,30 @@
 // countMs('code') === 0
 
 ////////////////////////
+
+// Наш новый босс, как оказалось, просто ненавидит гласные буквы, поэтому нам нужно убрать их из всей документации.
+
+// Напиши функцию removeVowels, которая принимает строку doc и возвращает строку, где все гласные из doc удалены.
+
+// Гласными для этой задачи считаются буквы aeiouy в любом регистре.
+
+// function removeVowels(doc) {
+//     // write code here
+//       let al = [ 'a', 'e', 'i', 'o', 'u', 'y',
+//                  'A', 'E', 'I', 'O', 'U', 'Y' ];
+//       let result = "";
+
+//       for(let i = 0; i < doc.length; i++)
+//       {
+
+//           if (!al.includes(doc[i]))
+//           {
+//               result += doc[i];
+//           }
+//       }
+//       return result;
+//   }
+
+// removeVowels('document') === 'dcmnt'
+// removeVowels('I like my boss') === ' lk m bss'
+// removeVowels('350 euro') === '350 r'
