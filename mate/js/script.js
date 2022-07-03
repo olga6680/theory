@@ -252,22 +252,22 @@
 
 // function getLocation(coordinates, commands) {
 //     let arr = [...coordinates];
-  
+
 //     for (let i = 0; i < commands.length; i++) {
 //       switch (commands[i]) {
-  
+
 //         case 'forward': 
 //           arr[1]++;
 //           break;
-  
+
 //         case 'back': 
 //           arr[1]--;
 //           break;
-  
+
 //         case 'right': 
 //           arr[0]++;
 //           break;
-  
+
 //         case 'left': 
 //           arr[0]--;
 //           break;
@@ -278,3 +278,29 @@
 
 
 /////////////////////
+
+
+// Итак, когда все процессы настроены, нужно ставить перед собой правильные цели. Наши роботы лучшие на рынке, поэтому нужно наращивать обороты и увеличивать объемы производства.
+
+// Напиши функцию getPlan, которая вернёт массив с целями на заданное количество месяцев numberOfMonths. Сейчас мы производим startProduction роботов в месяц и хотим, чтобы каждый месяц это число росло на заданный процент percent.
+
+// Если число роботов окажется дробным, округли его вниз (Math.floor(value)). Цель на следующий месяц рассчитывай на основе предыдущего.
+
+// function getPlan(startProduction, numberOfMonths, percent) {
+//     // write code here
+//     let goals = [];
+//     let currentProduction = startProduction;
+  
+//     for (let i = 0; i < numberOfMonths; i++) { 
+//       currentProduction = Math.floor(currentProduction + (currentProduction * percent / 100));    
+//       goals.push(currentProduction);  
+//     }
+//     return goals;
+//   }
+
+// getPlan(200, 3, 50) === [300, 450, 675]
+// getPlan(10, 4, 30) === [13, 16, 20, 26]
+// getPlan(1000, 6, 20) === [1200, 1440, 1728, 2073, 2487, 2984]
+
+
+//////////////////////////
