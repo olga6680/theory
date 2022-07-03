@@ -571,3 +571,50 @@
 
 
 //////////////////////////////////
+
+
+// Реализуй функцию isJumping, которая принимает число number и возвращает строку JUMPING, если каждая цифра в числе отличается от соседней на 1. Если условие не выполняется - строку NOT JUMPING.
+
+// Примечания:
+
+// Входное число всегда положительное
+// Разница между 9 и 0 не является 1
+// Все числа, которые состоят из одной цифры - JUMPING
+
+// function isJumping(number) {
+//     // write code here
+//     let jump = "JUMPING",
+//         notJump = "NOT JUMPING",
+//         bool= false,
+//         str = number + "";
+//         let arr =str.split("");
+//         arr = arr.map( s => + s );
+
+//     if(number >= 0 && number < 10){
+//       return jump;
+//     }else {
+//         for(let i = 1;i<str.length;i++){
+//         if(arr[i-1] - arr[i] == 1 || arr[i-1] - arr[i] == -1){
+//             bool = true;
+//         }else return notJump;
+//         }
+//     }
+//     if(bool){
+//         return jump;
+//     }else return notJump;
+//   }
+
+// isJumping(9) === 'JUMPING'
+// Это число из одной цифры
+
+// isJumping(79) === 'NOT JUMPING'
+// Соседние цифры не отличаются на 1
+
+// isJumping(23454) === 'JUMPING'
+// Соседние цифры отличаются на 1
+
+
+////////////////////////
+
+
+
