@@ -162,3 +162,29 @@
 
 /////////////////
 
+// Пришло время запускать массовое производство роботов! Чтобы роботы на линии собирались правильно, нужно маркировать детали. Разные части робота будут состоять из разного количества деталей. Давай сделаем наклейки для них!
+
+// Напиши программу для принтера makeStickers, которая принимает число detailsCount и строку robotPart. Функция должна возвращать массив строк в следующем формате: {{robotPart}} detail #{{n}} (например Hand detail #1).
+
+// Если detailsCount = 0, верни пустой массив.
+
+// function makeStickers(detailsCount, robotPart) {
+//     // write code here
+//     let arrDetailCount = [];
+
+//     for (let i = 1; i <= detailsCount; i++) {
+
+//       if (detailsCount !== 0) {
+//         arrDetailCount.push(`${robotPart} detail #${i}`);
+//       }
+//       arrDetailCount;    
+//     }
+//     return arrDetailCount;
+//   }
+
+// makeStickers(3, 'Body') === ['Body detail #1', 'Body detail #2', 'Body detail #3']
+// makeStickers(4, 'Head') === ['Head detail #1', 'Head detail #2', 'Head detail #3', 'Head detail #4']
+// makeStickers(0, 'Foot') === []
+
+
+///////////////////////
