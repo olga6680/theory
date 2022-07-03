@@ -290,7 +290,7 @@
 //     // write code here
 //     let goals = [];
 //     let currentProduction = startProduction;
-  
+
 //     for (let i = 0; i < numberOfMonths; i++) { 
 //       currentProduction = Math.floor(currentProduction + (currentProduction * percent / 100));    
 //       goals.push(currentProduction);  
@@ -304,3 +304,26 @@
 
 
 //////////////////////////
+
+
+// Первая партия роботов готова, теперь их надо проверить. Все роботы уникальны, поэтому скорость перемещения у каждого своя. Нужно определить минимальную, максимальную и среднюю скорость роботов.
+
+// Наш сервер получает массив скоростей роботов testResults, пропускает его через функцию getSpeedStatistic и возвращает статистику в виде массива.
+
+// Первый элемент результирующего массива — самая низкая скорость
+// второй — самая высокая
+// третий — среднее значение всех скоростей из testResults, округлённое вниз (используй Math.floor(result))
+
+// function getSpeedStatistic(arr) {
+//     if (!arr.length) arr = [0];
+//     return [Math.min(...arr), Math.max(...arr), Math.floor(arr.reduce((a, b) => a + b) / arr.length)];
+//   }
+
+//   getSpeedStatistic([10, 10, 11, 9, 12, 8]) === [8, 12, 10]
+// getSpeedStatistic([10]) === [10, 10, 10]
+// getSpeedStatistic([]) === [0, 0, 0]
+// getSpeedStatistic([8, 9, 3, 12]) === [3, 12, 8]
+// getSpeedStatistic([5]) === [5, 5, 5]
+
+
+////////////////////////
