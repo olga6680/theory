@@ -337,15 +337,15 @@
 // function compareRobots(firstRobotResults, secondRobotResults) {
 //     let sumFirstRobot = 0;
 //     let sumSecondRobot = 0;
-  
+
 //     for (let i = 0; i < firstRobotResults.length; i++) {
 //       sumFirstRobot += firstRobotResults[i];
 //     }
-  
+
 //     for (let j = 0; j < secondRobotResults.length; j++) {
 //       sumSecondRobot += secondRobotResults[j];
 //     }
-  
+
 //     if (sumFirstRobot > sumSecondRobot) {
 //       return `First robot for sale!`;
 //     } else if (sumFirstRobot < sumSecondRobot) {
@@ -362,5 +362,49 @@
 
 
 //////////////
+
+
+// Создай функцию checkNumber, которая принимает целое число number и проверяет его по трем различым свойствам:
+
+// это число положительное?
+// это число четное?
+// это число кратно 10?
+// Функция должна вернуть массив с результатами проверок в виде булевых значений.
+
+// function checkNumber(number) {
+//     let positiveNumber = true;
+//     let doubleNumber = true;
+//     let multipleNumber = true;
+
+//     if (number > 0) {
+//         positiveNumber = true;
+//     } else {
+//         positiveNumber = false;
+//     }
+
+
+//     if ((number % 2) === 0) {
+//         doubleNumber = true;
+//     } else {
+//         doubleNumber = false;
+//     }
+
+
+//     if ((number % 10) === 0) {
+//         multipleNumber = true;
+//     } else {
+//         multipleNumber = false;
+//     }
+
+//     return [positiveNumber, doubleNumber, multipleNumber];
+// }
+
+// checkNumber(3) === [true, false, false]
+// checkNumber(10) === [true, true, true]
+// checkNumber(0) === [false, true, true]
+// checkNumber(-1) === [false, false, false]
+
+
+///////////////////////
 
 
