@@ -3,11 +3,11 @@
 
 // const countMs = (text) => {
 //     let count = 0;
-
+  
 //     for (const letter of text) {
 //       if (letter.toLowerCase() === 'm') ++count;
 //     }
-
+  
 //     return count;
 //   }
 
@@ -28,10 +28,10 @@
 //       let al = [ 'a', 'e', 'i', 'o', 'u', 'y',
 //                  'A', 'E', 'I', 'O', 'U', 'Y' ];
 //       let result = "";
-
+       
 //       for(let i = 0; i < doc.length; i++)
 //       {
-
+           
 //           if (!al.includes(doc[i]))
 //           {
 //               result += doc[i];
@@ -43,3 +43,28 @@
 // removeVowels('document') === 'dcmnt'
 // removeVowels('I like my boss') === ' lk m bss'
 // removeVowels('350 euro') === '350 r'
+
+
+//////////////////////////
+
+// Создай функцию makeAbbr, которая принимает строку из слов words и возвращает аббревиатуру из них в верхнем регистре.
+
+// Строка words содержит одно или несколько слов, разделенных одним пробелом.
+
+// function makeAbbr(words) {
+
+//     return words
+//       .split(' ')
+//       .reduce((prevVal, curWord) => prevVal + (curWord ? curWord[0]: ''), '')
+//       .toUpperCase()
+  
+//   } 
+
+// makeAbbr('national aeronautics space administration') === 'NASA'
+// makeAbbr('central processing unit') === 'CPU'
+// makeAbbr('simplified molecular input line entry specification') === 'SMILES'
+
+
+/////////
+
+
