@@ -582,26 +582,17 @@
 // Все числа, которые состоят из одной цифры - JUMPING
 
 // function isJumping(number) {
-//     // write code here
-//     let jump = "JUMPING",
-//         notJump = "NOT JUMPING",
-//         bool= false,
-//         str = number + "";
-//         let arr =str.split("");
-//         arr = arr.map( s => + s );
-
-//     if(number >= 0 && number < 10){
-//       return jump;
-//     }else {
-//         for(let i = 1;i<str.length;i++){
-//         if(arr[i-1] - arr[i] == 1 || arr[i-1] - arr[i] == -1){
-//             bool = true;
-//         }else return notJump;
-//         }
+//     let a = number.toString().split('');
+  
+//     if(a.length === 1) return 'JUMPING';
+  
+//     for(let i=1; i<a.length; i++){
+  
+//        if(Math.abs(a[i] - a[i-1]) !== 1){
+//           return 'NOT JUMPING';
+//        }
 //     }
-//     if(bool){
-//         return jump;
-//     }else return notJump;
+//     return 'JUMPING';
 //   }
 
 // isJumping(9) === 'JUMPING'
@@ -615,6 +606,3 @@
 
 
 ////////////////////////
-
-
-
